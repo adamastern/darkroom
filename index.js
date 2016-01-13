@@ -1,20 +1,10 @@
-var config = require('config');
-var express = require('express');
-var bodyParser = require('body-parser');
-var routes = require('./routes');
-var corsMiddleware = require('./helpers/cors');
+var Darkroom = function(){
 
-var app = express();
+};
 
-app.use(bodyParser.json());
-app.use(corsMiddleware);
-app.use(routes);
+var darkroom = module.exports = new Darkroom();
 
-var port = config.get('express.port');
-app.listen(port, function(err){
-	if(err){
-		console.log(err);
-	}else{
-		console.log('App listening on port', port);
-	}
-});
+Darkroom.prototype.init = require('./lib/core/init');
+Darkroom.prototype.createApp = require('./lib/core/createApp');
+Darkroom.prototype.start = require('./lib/core/start');
+
