@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"dependencies": {
-		"api-response-middleware":"^0.0.2",
+		"api-response-middleware":"^0.0.3",
 		"aws-sdk":"latest",
 		"body-parser":"latest",
 		"cors":"latest",
